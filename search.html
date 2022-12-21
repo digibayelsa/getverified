@@ -1,0 +1,257 @@
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    
+        <title>DigiBayelsa</title>
+    
+    
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    
+        <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+    
+        <link rel="stylesheet" href="assets/css/owl-carousel.css">
+    
+        <link rel="stylesheet" href="assets/css/lightbox.css">
+    <!--
+    
+    TemplateMo 571 Hexashop
+    
+    https://templatemo.com/tm-571-hexashop
+    
+    -->
+        </head>
+       <!-- <button id="myBtn" class="btn btn-one" style="width: 100% ; border: none; height: 100px ; background-color: rgb(104, 3, 219);  color: rgb(0, 0, 0); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, serif; font-size: 39px;"  id="myBtn">See Business Info</button>-->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2 id="toppage">Own an Online Store for 5K only.</h2>
+                        <span>Verify your Business so you can upload your Products on the Platform.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4" id="elem1">
+                    <div class="item">
+                        <div class="thumb">
+                           <!-- <div class="hover-content">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>-->
+                            <img id="imgs" src="assets/images/men-01.jpg" alt="">
+                        </div>
+                        <div class="down-content">
+                            <h4 id="busname">DigiBayelsa</h4>
+                            <span id="phone">   080-DIGI-BAY-342</span>
+                            <a  href= "" id="weblink" > <span id="phone">   Goto Website</a></span>
+                            <span id="location">  DIGI-BAY-LOCATION</span>
+                          <!--   <ul class="stars">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h4 id="buttompage"> </h4>
+    <script src="business_search.js"></script>
+    <style>
+        /* The Modal (background) */
+         
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+          font-family:'Courier New', Courier, monospace;
+            font-size: 29px;
+        }
+        
+        /* Modal Content/Box */
+        .modal-content {
+          background-color: #fefefe;
+          margin: 15% auto; /* 15% from the top and centered */
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%; /* Could be more or less, depending on screen size */
+        }
+        
+        /* The Close Button */
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+        
+        
+        
+        
+        
+        </style>
+
+<script>
+
+ var first;
+    var directory=[];
+//json db code 
+jsonGetdata();
+function jsonGetdata(){
+    get ();
+ 
+    var str="";
+    var search;
+const fetchPromise = fetch(first+'.json');
+
+
+
+fetchPromise.then((response) => {
+  const jsonPromise = response.json();
+  jsonPromise.then((data) => {
+   
+    
+ //alert("inside fetch "+first);
+        for (let i=2;i<data.length;i++){
+      
+str=str+data[i].name +"# " +i + " "+data[i].phone+"#"+data[i].image+"#"+data[i].location+"#"+data[i].status+"#"+data[i].link;
+                    console.log(data[i].name +" "+data[i].phone+" "+data[i].image+" "+data[i].location+" "+data[i].link);
+                    directory[i]=str;
+                     str=" ";
+
+          
+            }
+                   
+            fetchPromise.then((response) => {
+                get () ;
+                Load_Business();
+        });
+//document.getElementById("para").innerHTML=str;
+ 
+  });
+});
+
+}
+
+
+
+function Load_Business(){
+     //var directory=["Shop1 0806-DIGI product1 product2 1.jpg","Shop2 0806-DIGI product1 product2 2.jpg","Shop3 080633-DIGI product1 product2 3.jpg","Shop4 0806-DIGI product1 product2 4.jpg","Shop5 0806-DIGI product1 product 5.jpg","Shop6 0806-DIGI product1 product2 6.jpg","Shop7 07050423665 product1 product2 7.jpg","Shop18 08062761608 product1 product2 8.jpg"];
+// Get the element
+// Create a copy of it
+//
+var newelem='';
+let storedata=0;
+var buslink='';
+ // Update the ID and add a class
+ for (let i =2;i<directory.length;i++){
+ 
+    let loc=directory[i].split("#")[3];
+ 
+            if(loc ==second){
+                storedata=storedata+1
+    var elem = document.querySelector('#elem1');
+    var clone = elem.cloneNode(true);
+    var a = document.getElementById("weblink"); //or grab it by tagname etc
+    a.href =directory[i].split("#")[4];
+  
+         document.getElementById("busname").innerHTML=directory[i].split("#")[0];
+          document.getElementById("phone").innerHTML=directory[i].split("#")[1];
+   // document.getElementById("prd1").innerHTML=directory[i].split(" ")[2];
+    document.getElementById("location").innerHTML=directory[i].split("#")[3];
+    document.getElementById("imgs").src="assets/images/"+directory[i].split("#")[2];
+    
+    newelem='elem'+i; 
+   
+    clone.id = newelem;
+clone.classList.add('text-large');
+// Inject it into the DOM
+elem.after(clone);
+
+ }
+  
+ if(second=="All Locations" && first!="CATEGORY" ) {
+    storedata=storedata+1
+    var elem = document.querySelector('#elem1');
+    var clone = elem.cloneNode(true);
+         document.getElementById("busname").innerHTML=directory[i].split("#")[0];
+          document.getElementById("phone").innerHTML=directory[i].split("#")[1];
+   // document.getElementById("prd1").innerHTML=directory[i].split(" ")[2];
+    document.getElementById("location").innerHTML=directory[i].split("#")[3];
+    document.getElementById("imgs").src="assets/images/"+directory[i].split("#")[2];
+    var a = document.getElementById("weblink"); //or grab it by tagname etc
+ 
+    a.href =directory[i].split("#")[5];
+  newelem='elem'+i; 
+    
+    clone.id = newelem;
+clone.classList.add('text-large');
+// Inject it into the DOM
+elem.after(clone);
+
+ }
+
+}
+
+if (storedata==0){
+    document.getElementById("toppage").innerHTML="There is no Data for your Search!!";
+ 
+}
+}
+// get data from search
+function get () {
+
+   // alert("load session data");
+      // (A) GET FROM SESSION
+        first = sessionStorage.getItem("first"),
+          second = JSON.parse(sessionStorage.getItem("second"));
+//alert("i just got it "+first);
+      // (B) IT WORKS!
+      // MANUALLY OPENING 1B-SESSION.HTML WILL NOT WORK THOUGH
+      // SESSION DATA WILL PERISH ONCE TAB/WINDOW IS CLOSED
+ 
+      console.log(first);  // Foo Bar
+      console.log(second); // ["Hello", "World"]
+
+      // (EXTRA) CLEAR SESSION STORAGE
+      // sessionStorage.removeItem("KEY");
+      // sessionStorage.clear();
+    }
+
+    
+</script>
+</html>
